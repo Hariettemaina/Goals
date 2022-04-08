@@ -4,7 +4,7 @@
     <ul>
       <div *ngFor="let goal of goals;let i = index">
         <li appStrikethrough> 
-          {{goal.name | titlecase}}  
+          {{goal.name}} due on {{goal.completeDate |date|uppercase}}  
         </li>
         <button (click)="toggleDetails(i)">Toggle Details</button>
         <app-goal-detail *ngIf="goal.showDescription" [goal]="goal" (isDelete) = "deleteGoal ($event,i)"></app-goal-detail>
